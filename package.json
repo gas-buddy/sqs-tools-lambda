@@ -1,0 +1,17 @@
+{
+  "name": "loyalty-serv-periodic-publish",
+  "version": "1.0.0",
+  "description": "Lambda Function to accept input transform and publish to gasback affiliate queue",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.822.0",
+    "moment": "^2.29.1",
+    "shortstop": "^1.0.3",
+    "shortstop-handlers": "^1.0.1"
+  }
+}
