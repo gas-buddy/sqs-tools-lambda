@@ -29,9 +29,11 @@ exports.handleShortStopAndPublish = async (event) => {
   });
   const queueUrl = `https://sqs.${process.env.region}.amazonaws.com/${process.env.awsAccountId}/${queueName}`;
   const sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
+  const { MessageBody, MessageAttributes } = message;
   const messageParams = {
-    MessageBody: JSON.stringify(message),
+    MessageBody: JSON.stringify(MessageBody || message),
     QueueUrl: queueUrl,
+    MessageAttributes,
   };
   console.log(JSON.stringify(messageParams));
   let returnPublish;
